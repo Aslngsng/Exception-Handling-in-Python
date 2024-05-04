@@ -10,33 +10,32 @@ while True:
 
     chosen_operation = input("What operation would you like to choose? ")
     chosen_operation = chosen_operation.upper()
-    
+
     try:
-        if chosen_operation.upper() not in ["ADDITION, SUBSTRACTION, MULTIPLICATION, OR DIVISION"]:
+        if chosen_operation.upper() not in ["ADDITION, SUBTRACTION, MULTIPLICATION, OR DIVISION"]:
             raise TypeError ("Operation is not available!")
+        
+        first_number = int(input("Enter first number: "))
+        second_number = int(input("Enter second number: "))
 
         if chosen_operation == "ADDITION":
-            first_number = int(("Enter first number: "))
-            second_number = int(("Enter second number: "))
-            result = print("The sum is " + str(first_number + second_number))
-        elif chosen_operation == "SUBTRACTION":
-            first_number = int(("Enter first number: "))
-            second_number = int(("Enter second number: "))
-            result = print("The difference is " + str(first_number - second_number))
+            result = first_number + second_number
+            print = ("The sum is " + result)
+        elif chosen_operation == "SUBTRACTION": 
+            fresult = first_number - second_number
+            print = ("The difference is " + result)
         elif chosen_operation == "MULTIPLICATION":
-            first_number = int(("Enter first number: "))
-            second_number = int(("Enter second number: "))
-            result = print("The product is " + str(first_number * second_number))
+            result = first_number * second_number
+            print = ("The product is " + result)
         elif chosen_operation == "DIVISION":
-            first_number = int(("Enter first number: "))
-            second_number = int(("Enter second number: "))
             if second_number == 0:
                 raise ValueError ("Sorry! You are dividing by zero")
-            result = print("The quotient is " + str(first_number // second_number))
-    except:
-        print("Unkown exeption") 
-        ask_the_user_if_they_want_to_try_again = print("Do you want to try again? (YES/NO): ")
-        ask_the_user_if_they_want_to_try_again = ask_the_user_if_they_want_to_try_again.upper()
+            result = first_number / second_number
+            print = ("The quotient is " + result)
+
+        ask_the_user_if_they_want_to_try_again = print("Do you want to try again? (YES/NO): ").upper()
         if ask_the_user_if_they_want_to_try_again.upper() != "YES":
             print ("Thank you")
-        break
+            break
+    except Exception as error:
+        print("An error occured: " + error)
