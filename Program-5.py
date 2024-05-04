@@ -19,7 +19,7 @@ while True:
             first_number = int(("Enter first number: "))
             second_number = int(("Enter second number: "))
             result = print("The sum is " + str(first_number + second_number))
-        elif chosen_operation == "SUBSTRACTION":
+        elif chosen_operation == "SUBTRACTION":
             first_number = int(("Enter first number: "))
             second_number = int(("Enter second number: "))
             result = print("The difference is " + str(first_number - second_number))
